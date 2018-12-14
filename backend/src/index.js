@@ -9,13 +9,24 @@ const server = createServer();
 server.express.use(cookieParser());
 
 //decode jwt to get user id on each request
-
 server.express.use((req, res, next) => {
   const { token } = req.cookies;
   if (token) {
     const { userId } = jwt.verify(token, process.env.APP_SECRET);
     req.userId = userId;
   }
+  next();
+});
+
+//create middleware that populates the user on each request
+server.express.use(async (req, res, next) => {
+  //if they arent logged in skip
+  if (!req.userId) return next();
+  const user = await db.query.user(
+    { where: { id: req.userId } },
+    "{id, permissions, email, name}"
+  );
+  req.user = user;
   next();
 });
 

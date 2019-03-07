@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleItem/> errors with a not found item 1`] = `
+<p
+  data-test="graphql-error"
+>
+  <strong>
+    Shoot!
+  </strong>
+  Network error: Error writing result to store for query:
+ query SINGLE_ITEM_QUERY($id: ID) {
+  item(where: {id: $id}) {
+    id
+    title
+    description
+    largeImage
+    __typename
+  }
+}
+
+Cannot read property 'item' of undefined
+</p>
+`;
+
+exports[`<SingleItem/> renders with proper data 1`] = `
+<h2>
+  Viewing 
+  dogs are best
+</h2>
+`;
+
+exports[`<SingleItem/> renders with proper data 2`] = `
+<img
+  src="dog.jpg"
+/>
+`;
+
+exports[`<SingleItem/> renders with proper data 3`] = `
+<p>
+  dogs
+</p>
+`;

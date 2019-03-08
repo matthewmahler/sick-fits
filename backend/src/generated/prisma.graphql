@@ -1,5 +1,5 @@
-# source: https://us1.prisma.sh/matthewmahler-b57412/sick-fits/dev
-# timestamp: Thu Jan 03 2019 09:38:03 GMT-0500 (Eastern Standard Time)
+# source: https://sick-fits-prod-90082643e4.herokuapp.com/production/prod
+# timestamp: Fri Mar 08 2019 08:36:52 GMT-0500 (Eastern Standard Time)
 
 type AggregateCartItem {
   count: Int!

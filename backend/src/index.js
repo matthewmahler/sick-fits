@@ -5,7 +5,7 @@ const createServer = require("./createServer");
 const db = require("./db");
 
 const server = createServer();
-
+//create server
 server.express.use(cookieParser());
 
 //decode jwt to get user id on each request
